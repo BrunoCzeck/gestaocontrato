@@ -31,7 +31,7 @@ model Contrato {
 
 model Item { 
   id String @id
-  numero_item Int
+  numero_item String
   perfil String
   quantidade_hora String
   valor_hora String

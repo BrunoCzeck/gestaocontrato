@@ -1,0 +1,173 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "gestaocontrato",
+    "dateExported": "2024-04-11T02:54:18.405Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "a35ff1d1-9390-4fe1-b9eb-f34e20f536c7",
+            "name": "contrato",
+            "containerId": "",
+            "created": "2024-04-11T01:58:29.396Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "e8d121f8-63d1-4441-b719-66c0e3bcc7bd",
+            "name": "item",
+            "containerId": "",
+            "created": "2024-04-11T02:09:25.639Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "c2c3adfe-0fd9-403d-bbc0-1a67e4f6887c",
+            "name": "colaborador",
+            "containerId": "",
+            "created": "2024-04-11T02:34:24.794Z",
+            "sortNum": 30000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "fc6b5446-f3b0-45ea-963b-6f99e5d8c609",
+            "colId": "ccf7109d-7584-442a-8b34-ed3ae6786657",
+            "containerId": "a35ff1d1-9390-4fe1-b9eb-f34e20f536c7",
+            "name": "PostContract",
+            "url": "localhost:8000/v1/api/contract",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-04-10T00:24:23.007Z",
+            "modified": "2024-04-11T01:45:51.493Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"numero_contrato\": \"2-007027\",\n  \"valor_contrato\": \"26.553.99\",\n  \"data_vigencia\":\"2024-07-14\",\n  \"fornecedor\":\"Esfera\",\n  \"cnpj\":\"81.236.770/0001-30\",\n  \"aditivo\":\"1\",\n  \"cps\":true,\n  \"ata_registro\":false,\n  \"porcentagem_reajuste\":\"0\",\n  \"responsavel_contrato\":\"Carlos Simm\",\n  \"numero_edital\":\"2-0982392\",\n  \"numero_lote\":\"1\",\n  \"hora_sem_orcamento\":\"0\",\n  \"numero_processo\":\"12382938\",\n  \"numero_ata\":\"1231231\",\n  \"hora_fora_contrato\":\"0\",\n  \"observacao\":\"Contrato filho do contrato pai : 12931321\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "d02fbe9e-fba5-4e16-b27e-58f5da0b5c41",
+            "colId": "ccf7109d-7584-442a-8b34-ed3ae6786657",
+            "containerId": "a35ff1d1-9390-4fe1-b9eb-f34e20f536c7",
+            "name": "PutContract",
+            "url": "localhost:8000/v1/api/contract",
+            "method": "PUT",
+            "sortNum": 20000,
+            "created": "2024-04-10T02:53:19.415Z",
+            "modified": "2024-04-11T01:36:03.084Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"id\": \"8ac1111a-cd7f-46a9-b4f2-0c852c297b96\",\n  \"porcentagem_reajuste\": \"1\",\n  \"hora_sem_orcamento\": \"1\",\n  \"hora_fora_contrato\": \"123\",\n  \"observacao\": \"123\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "8dd7f9b0-79d5-4d93-be74-3a4516f176e1",
+            "colId": "ccf7109d-7584-442a-8b34-ed3ae6786657",
+            "containerId": "a35ff1d1-9390-4fe1-b9eb-f34e20f536c7",
+            "name": "DeleteContract",
+            "url": "localhost:8000/v1/api/contract",
+            "method": "DELETE",
+            "sortNum": 30000,
+            "created": "2024-04-11T01:17:14.702Z",
+            "modified": "2024-04-11T01:34:16.109Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"numero_contrato\": \"2-007024\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "1a37dee2-13e6-42f0-895a-6599aab3308f",
+            "colId": "ccf7109d-7584-442a-8b34-ed3ae6786657",
+            "containerId": "a35ff1d1-9390-4fe1-b9eb-f34e20f536c7",
+            "name": "GetContract",
+            "url": "localhost:8000/v1/api/contract/8ac1111a-cd7f-46a9-b4f2-0c852c297b96",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-04-11T01:37:45.622Z",
+            "modified": "2024-04-11T01:49:50.989Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "a649d1b8-0f68-40b5-b769-f35faf2caf44",
+            "colId": "ccf7109d-7584-442a-8b34-ed3ae6786657",
+            "containerId": "a35ff1d1-9390-4fe1-b9eb-f34e20f536c7",
+            "name": "GetContractAll",
+            "url": "localhost:8000/v1/api/contract",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-04-11T01:52:59.175Z",
+            "modified": "2024-04-11T01:53:07.665Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "f56f7619-5f80-4643-ac3a-782a730de8d3",
+            "colId": "ccf7109d-7584-442a-8b34-ed3ae6786657",
+            "containerId": "e8d121f8-63d1-4441-b719-66c0e3bcc7bd",
+            "name": "PostItem",
+            "url": "localhost:8000/v1/api/item",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2024-04-11T02:09:31.385Z",
+            "modified": "2024-04-11T02:17:22.646Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"numero_item\": \"0239293\",\n  \"perfil\": \"Analista de Negocio\",\n  \"quantidade_hora\": \"300\",\n  \"valor_hora\":\"29.754.90\",\n  \"numero_contrato\":\"2-007024\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "8d0859b7-ac4f-4188-aab0-df9552dcc413",
+            "colId": "ccf7109d-7584-442a-8b34-ed3ae6786657",
+            "containerId": "c2c3adfe-0fd9-403d-bbc0-1a67e4f6887c",
+            "name": "PostColaborador",
+            "url": "localhost:8000/v1/api/colaborador",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2024-04-11T02:34:31.488Z",
+            "modified": "2024-04-11T02:36:50.413Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"perfil\":\"Analista de Negocio\",\n  \"colaborador\":\"Lucas Simm\",\n  \"telefone\":\"4199590-0019\",\n  \"cpf_rg\":\"05670918290\",\n  \"email\":\"lucas@esfera.com.br\",\n  \"aprovado\":true,\n  \"numero_contrato\":\"2-20252\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "5e1efaa8-4354-40ec-ad75-876b6460420d",
+            "colId": "ccf7109d-7584-442a-8b34-ed3ae6786657",
+            "containerId": "c2c3adfe-0fd9-403d-bbc0-1a67e4f6887c",
+            "name": "PutColaborador",
+            "url": "localhost:8000/v1/api/colaborador",
+            "method": "PUT",
+            "sortNum": 70000,
+            "created": "2024-04-11T02:42:04.265Z",
+            "modified": "2024-04-11T02:53:02.462Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"id\": \"57450e9b-3a3e-4f0a-a7dc-87d2c87043eb\",\n  \"perfil\":\"Analista de Teste\",\n  \"colaborador\":\"Lucas Simm\",\n  \"telefone\":\"4199590-0019\",\n  \"cpf_rg\":\"05670918290\",\n  \"email\":\"lucasimm@esfera.com.br\",\n  \"aprovado\":false,\n  \"numero_contrato\":\"2-20222\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}

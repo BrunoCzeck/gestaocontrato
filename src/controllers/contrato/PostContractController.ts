@@ -29,7 +29,7 @@ export default {
             if (contractExist) {
                 return res.json({
                     error: true,
-                    message: 'Contrato já cadastrado!'
+                    message: 'Contract already registered'
                 });
             }
             const contract = await prisma.contrato.create({
@@ -56,7 +56,7 @@ export default {
             });
             return res.json({
                 error: false,
-                message: 'Contrato Cadastrado com Sucesso!',
+                message: 'Successfully Registered Contract',
                 contract
             })
         } catch (e) {

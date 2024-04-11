@@ -25,7 +25,7 @@ CREATE TABLE `dbo.contrato` (
 -- CreateTable
 CREATE TABLE `dbo.item` (
     `id` VARCHAR(191) NOT NULL,
-    `numero_item` INTEGER NOT NULL,
+    `numero_item` VARCHAR(191) NOT NULL,
     `perfil` VARCHAR(191) NOT NULL,
     `quantidade_hora` VARCHAR(191) NOT NULL,
     `valor_hora` VARCHAR(191) NOT NULL,

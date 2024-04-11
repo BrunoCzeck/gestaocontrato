@@ -1,57 +1,49 @@
 import { Request, Response } from 'express';
-import { prisma } from "../../../database"
-import { v4 as uuidv4 } from 'uuid';
+import { prisma } from "../../../database";
 
 export default {
     async ContractPut(req: Request, res: Response) {
         try {
             const {
-                numero_contrato,
-                aditivo, 
-                cps,
-                ata_registro,
+                id,
                 porcentagem_reajuste,
-                numero_edital,
                 numero_lote,
                 hora_sem_orcamento,
-                numero_processo,
-                numero_ata,
                 hora_fora_contrato,
-                observacao } = req.body
-                const id = uuidv4();
+                observacao
+            } = req.body;
 
-            const contractExist = await prisma.contrato.findFirst({ where: { numero_contrato } })
-            if (contractExist) {
+            const contractExist = await prisma.contrato.findFirst({ where: { id } });
+            if (!contractExist) {
                 return res.json({
                     error: true,
-                    message: 'Contrato já cadastrado!'
+                    message: 'No Contracts Found'
                 });
             }
+
             const contractPut = await prisma.contrato.update({
                 where: {
                     id
                 },
                 data: {
-                    aditivo, 
-                    cps,
-                    ata_registro,
                     porcentagem_reajuste,
-                    numero_edital,
                     numero_lote,
                     hora_sem_orcamento,
-                    numero_processo,
-                    numero_ata,
                     hora_fora_contrato,
                     observacao
                 }
             });
-            return res.json({
-                error: false,
-                message: 'Alterado Contrato com Sucesso',
-                contractPut
-            })
+
+            return res.status(200).json({
+                error: true,
+                message: 'Contract Amendment'
+            });
         } catch (e) {
-            console.log({ message: e.message })
+            console.log({ message: e.message });
+            return res.status(500).json({
+                error: true,
+                message: 'Error changing contract'
+            });
         }
     }
-}
+};
