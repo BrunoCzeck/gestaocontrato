@@ -6,14 +6,14 @@ export default {
 
         const { id } = req.params;
 
-        const contractExist = await prisma.contrato.findFirst({ where: { id } });
-        if (contractExist) {
+        const contractExist = await prisma.contrato.findUnique({ where: { id: String(id) } });
+        if (!!contractExist) {
             return res.status(200).json({
                 error: true,
                 message: 'Success in getting the contracts',
                 contractExist
             });
-        } else {
+        } else {    
             return res.status(500).json({
                 error: true,
                 message: 'Error getting the contracts'

@@ -15,7 +15,7 @@ export default {
                 numero_contrato
             } = req.body;
 
-            const contractPut = await prisma.colaborador.update({
+            const collaborator = await prisma.colaborador.update({
                 where: {
                     id
                 },
@@ -33,10 +33,9 @@ export default {
             return res.status(200).json({
                 error: true,
                 message: 'Changed collaborator',
-                contractPut
+                collaborator
             });
         } catch (e) {
-            console.log({ message: e.message });
             return res.status(500).json({
                 error: true,
                 message: 'Error changing collaborator'

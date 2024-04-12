@@ -1,26 +1,21 @@
 import { Request, Response } from 'express';
-import { prisma } from '../../../database';
+import { prisma } from "../../../database";
 
 export default {
-    async ContractGetAll(req: Request, res: Response) {
-        try {
-            const contracts = await prisma.contrato.findMany();
+    async ContractAll(req: Request, res: Response) {
 
-            if (contracts.length === 0) {
-                return res.status(404).json({
-                    error: true,
-                    message: 'No Contracts Found'
-                });
-            }
-            return res.json({
-                error: false,
-                contracts
+        const contract = await prisma.contrato.findMany();
+        if (!!contract) {
+            return res.status(200).json({
+                error: true,
+                message: 'Success in getting the contracts',
+                contract
             });
-        } catch (error) {
+        } else {    
             return res.status(500).json({
                 error: true,
                 message: 'Error getting the contracts'
-            });
+            })
         }
     }
-}
+};

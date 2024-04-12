@@ -22,7 +22,7 @@ export default {
                     message: 'Employee already registered'
                 });
             }
-            const contract = await prisma.colaborador.create({
+            const collaborator = await prisma.colaborador.create({
                 data: {
                     id: id,
                     perfil,
@@ -37,7 +37,7 @@ export default {
             return res.json({
                 error: false,
                 message: 'Successfully registered employee!',
-                contract
+                collaborator
             })
         } catch (e) {
             console.log({ message: e.message })
