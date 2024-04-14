@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "gestaocontrato",
-    "dateExported": "2024-04-12T00:06:25.331Z",
+    "dateExported": "2024-04-14T17:31:52.050Z",
     "version": "1.1",
     "folders": [
         {
@@ -96,11 +96,11 @@
             "colId": "acac1272-26f2-4793-8bcd-874ad64082bd",
             "containerId": "5842f5ba-feff-4817-afd2-715a90e8fbf8",
             "name": "GetContract",
-            "url": "localhost:8000/v1/api/contract/bebc7f8e-cbb3-43f1-8a36-8dc8262a964b",
+            "url": "localhost:8000/v1/api/contract/521164f1-4ba1-4807-bfc9-dfa1ee9bd2b7",
             "method": "GET",
             "sortNum": 40000,
             "created": "2024-04-11T12:52:39.595Z",
-            "modified": "2024-04-11T18:39:05.265Z",
+            "modified": "2024-04-12T18:06:31.419Z",
             "headers": [],
             "params": [],
             "tests": []
@@ -158,6 +158,25 @@
             "tests": []
         },
         {
+            "_id": "15a148bf-c0af-43b6-adcb-b9d550da9eea",
+            "colId": "acac1272-26f2-4793-8bcd-874ad64082bd",
+            "containerId": "8e7bfbe4-5f7e-46f0-9eae-802e0a42bad8",
+            "name": "GetItem/:Id",
+            "url": "localhost:8000/v1/api/item",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-04-13T03:32:11.505Z",
+            "modified": "2024-04-13T03:32:44.712Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"numero_contrato\": \"2-007024\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
             "_id": "937d3198-f14a-45ba-ac7d-a8e95ed69ed1",
             "colId": "acac1272-26f2-4793-8bcd-874ad64082bd",
             "containerId": "77bd2bec-8ff9-4fde-af85-8f6ab4328291",
@@ -185,12 +204,31 @@
             "method": "POST",
             "sortNum": 80000,
             "created": "2024-04-11T19:22:02.008Z",
-            "modified": "2024-04-11T20:07:40.769Z",
+            "modified": "2024-04-13T03:25:53.889Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"numero_item\": \"0293203\",\n  \"titulo_requisito\": \"Tela de Login\",\n  \"numero_contrato\": \"2-0929\",\n  \"valor_total\": \"30.092.2\",\n  \"horas\": \"19\",\n  \"observacao\": \"Ola você\",\n  \"json_perfil\": [\n      {\n        \"numero_item\": \"0239291\",\n        \"perfil\": \"Analista de Negocio\",\n        \"quantidade_hora\": \"300\",\n        \"valor_hora\":\"29.754.90\",\n        \"numero_contrato\":\"2-007024\"\n      },\n      {\n        \"numero_item\": \"0239292\",\n        \"perfil\": \"Analista de teste\",\n        \"quantidade_hora\": \"300\",\n        \"valor_hora\":\"29.754.90\",\n        \"numero_contrato\":\"2-007024\"\n      }\n    ]\n}",
+                "raw": "{\n  \"numero_item\": \"0293209\",\n  \"titulo_requisito\": \"Tela de estimativa\",\n  \"numero_contrato\": \"2-0929\",\n  \"valor_total\": 3958.5,\n  \"horas\": 129.5,\n  \"observacao\": \"Ola você\",\n  \"json_perfil\": [\n      {\n        \"numero_item\": \"0239291\",\n        \"perfil\": \"Analista de Negocio\",\n        \"quantidade_hora\": \"300\",\n        \"valor_hora\":\"29.754.90\",\n        \"numero_contrato\":\"2-007024\"\n      },\n      {\n        \"numero_item\": \"0239292\",\n        \"perfil\": \"Analista de teste\",\n        \"quantidade_hora\": \"300\",\n        \"valor_hora\":\"29.754.90\",\n        \"numero_contrato\":\"2-007024\"\n      }\n    ]\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "267eb9bb-1f2d-4da1-8801-c42e43a3ec95",
+            "colId": "acac1272-26f2-4793-8bcd-874ad64082bd",
+            "containerId": "e3837b62-2e2d-4cf1-b1a4-3d1c60fae292",
+            "name": "GetEstimativa/:Id",
+            "url": "localhost:8000/v1/api/estimativa",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2024-04-13T03:20:28.341Z",
+            "modified": "2024-04-13T03:24:52.173Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"numero_contrato\": \"2-0929\"\n}",
                 "form": []
             },
             "tests": []

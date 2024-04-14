@@ -8,6 +8,8 @@ import PostItemController from "./controllers/item/PostItemController";
 import PostColaboradorController from "./controllers/colaborador/PostColaboradorController";
 import PutColaboradorController from "./controllers/colaborador/PutColaboradorController";
 import PostEstimativaController from "./controllers/estimativa/PostEstimativaController";
+import GetEstimativaController from "./controllers/estimativa/GetEstimativaController";
+import GetItemController from "./controllers/item/GetItemController";
 
 const app = Express();
 app.use(Express.json())
@@ -22,6 +24,7 @@ app.get('/v2/api/contract', GetContractFornecedorController.ContractAll)
 
 /* API Item */
 app.post('/v1/api/item', PostItemController.Item)
+app.get('/v1/api/item', GetItemController.ItemGetId)
 
 /* API Colaborador */
 app.post('/v1/api/colaborador', PostColaboradorController.Colaborador)
@@ -29,6 +32,9 @@ app.put('/v1/api/colaborador', PutColaboradorController.PutColaborador)
 
 
 app.post('/v1/api/estimativa', PostEstimativaController.Estimativa)
+app.get('/v1/api/estimativa', GetEstimativaController.EstimativaGetId)
+
+
 app.listen(PORT, () => {
     console.log("porta", `${PORT}`)
 })
