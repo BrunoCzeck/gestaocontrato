@@ -1,40 +1,33 @@
 import Express from "express";
-import PostContractController from "./controllers/contrato/PostContractController";
-import PutContractController from "./controllers/contrato/PutContractController";
-import GetContractController from "./controllers/contrato/GetContractController";
-import GetContractFornecedorController from "./controllers/contrato/GetContractFornecedorController";
-import DeleteContractController from "./controllers/contrato/DeleteContractController";
-import PostItemController from "./controllers/item/PostItemController";
-import PostColaboradorController from "./controllers/colaborador/PostColaboradorController";
-import PutColaboradorController from "./controllers/colaborador/PutColaboradorController";
-import PostEstimativaController from "./controllers/estimativa/PostEstimativaController";
-import GetEstimativaController from "./controllers/estimativa/GetEstimativaController";
-import GetItemController from "./controllers/item/GetItemController";
+import http from "http"
+import bodyParser from "body-parser"
+import cookieParser from "cookie-parser"
+import compression from "compression"
+import cors from "cors"
+import { contract } from './routes/routes.contract'
+import { colaborador } from "./routes/routes.colaborador";
+import { item } from "./routes/routes.item";
+import { estimativa } from "./routes/routes.estimativa";
 
 const app = Express();
 app.use(Express.json())
 const PORT = 8000
+app.use(cors({
+    credentials: true,
+}))
 
-/* API Contrato */
-app.post('/v1/api/contract', PostContractController.Contract)
-app.put('/v1/api/contract', PutContractController.ContractPut)
-app.get('/v1/api/contract/:id', GetContractController.ContractGetId)
-app.delete('/v1/api/contract', DeleteContractController.DeleteContract)
-app.get('/v2/api/contract', GetContractFornecedorController.ContractAll)
+app.use(compression())
+app.use(cookieParser())
+app.use(bodyParser.json())
+const server = http.createServer(app)
 
-/* API Item */
-app.post('/v1/api/item', PostItemController.Item)
-app.get('/v1/api/item', GetItemController.ItemGetId)
-
-/* API Colaborador */
-app.post('/v1/api/colaborador', PostColaboradorController.Colaborador)
-app.put('/v1/api/colaborador', PutColaboradorController.PutColaborador)
-
-
-app.post('/v1/api/estimativa', PostEstimativaController.Estimativa)
-app.get('/v1/api/estimativa', GetEstimativaController.EstimativaGetId)
+/* Routes */
+app.use(contract)
+app.use(colaborador)
+app.use(item)
+app.use(estimativa)
 
 
-app.listen(PORT, () => {
-    console.log("porta", `${PORT}`)
+server.listen(PORT, () => {
+    console.log("Server Start in Port:", `${PORT}`)
 })
