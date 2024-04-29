@@ -8,6 +8,8 @@ export default {
             const {
                 numero_contrato,
                 valor_contrato,
+                horas,
+                status,
                 data_vigencia,
                 fornecedor,
                 cnpj,
@@ -37,6 +39,8 @@ export default {
                     id: id,
                     numero_contrato,
                     valor_contrato,
+                    horas,
+                    status,
                     data_vigencia,
                     fornecedor,
                     cnpj,

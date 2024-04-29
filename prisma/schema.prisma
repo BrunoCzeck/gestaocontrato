@@ -11,6 +11,8 @@ model Contrato {
   id String @id
   numero_contrato String
   valor_contrato String
+  horas Float
+  status Boolean
   data_vigencia String
   fornecedor String
   cnpj String
