@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 
 // Array de contratos fixos
-const contratosFixos = {
+const contratosCompras = {
     "contratosCompras": [
         {
             "contratoCompras": {
@@ -458,7 +458,7 @@ export default {
         try {
             // Simplesmente retorne o array de contratos fixos
             return res.status(200).json({
-                contratosFixos
+                contratosCompras
             });
         } catch (error) {
             console.error("Error:", error);
